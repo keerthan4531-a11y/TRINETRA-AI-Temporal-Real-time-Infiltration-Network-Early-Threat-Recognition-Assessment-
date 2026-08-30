@@ -471,22 +471,96 @@ In accordance with rigorous military research standards (NTRO), TRINETRA-AI expl
 
 ---
 
-## 🖥️ Dual Operational User Interfaces
+## 🖥️ Visual Showcase & Dedicated User Interfaces (Apple iOS Liquid Glass Design)
 
-TRINETRA-AI features two enterprise command interfaces powered by the same unified inference engine (`inference/engine.py`):
+TRINETRA-AI features an ultra-high-end visual command suite engineered with **Apple iOS Liquid Glassmorphism** (`backdrop-filter: blur(28px) saturate(210%)`), dynamic ambient floating gradient mesh orbs, specular top-edge refraction highlights, and spring-physics micro-animations. Every sidebar option provides a dedicated, deeply detailed view:
 
-### 1. Modern Web SOC Command Center (React 18 + TypeScript)
-- **Visual Design:** Tactical Dark command aesthetic (`#070a0f` base, `#00d9ff` electric cyan, `#ff3860` threat rose).
-- **Threat Horizon Recharts:** Real-time dual curve (Solid cyan observed threat + Dotted rose forward $K$-step rollout) with 75% critical threshold line.
-- **Interactive SVG Topology Graph:** Dynamic node visualization showing attacker host `147.32.84.165` probing internal servers (`147.32.80.9`, `147.32.80.14-19`) with animated packet pulses.
-- **5-Stage MITRE Stepper:** Visual kill-chain progression stepper with illuminated tactic icons.
-- **Real-Time XAI Bar Chart:** Monospace horizontal feature attribution bars showing directional impact (+ INCREASES / - DECREASES).
-- **Dense Flagged Flows Table:** Shimmering live table with instant severity filtering and search.
+---
 
-### 2. Hacker-Style Terminal Command Console (Rich TUI)
-- **Boot Splash Banner:** Cyberpunk ASCII initialization splash verifying GPU/CPU, Redis broker, and SQLite audit storage.
-- **2D ASCII Threat Risk Horizon Chart:** Universal Unicode/ASCII block-character line chart drawn directly inside the command line (` ▂▃▄▅▆▇█`).
-- **Heavy Bordered Audit Report:** Bordered `╔══ ANALYSIS COMPLETE ══╗` summary panel showing peak risk, stage progression paths, and severity distributions.
+### 1. SOC Operations Command Center — Live Attack Infiltration Surge
+*The mission-critical command console during active multi-stage intrusion testing on real CTU-13 telemetry:*
+
+<p align="center">
+  <img src="docs/screenshots/soc_attack_detected.png" alt="TRINETRA-AI SOC Operations Console - Attack Infiltration Detection" width="95%" style="border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);" />
+</p>
+
+- **Real-Time Infiltration Probability Chart:** Dual-curve Recharts telemetry showing the solid cyan observed curve and forward rollout projection spiking to **100% (HIGH ALERT)**.
+- **MITRE Kill-Chain Stepper:** Real-time illuminated tactic badge pinpointing **Lateral Movement (TA0008)**.
+- **Explainable AI (XAI):** Gradient attribution horizontal bars showing exactly which packet metrics (`unique_dst_ports`, `flag_syn_ratio`) drove the surge.
+- **Flagged Telemetry Table:** Real-time chronological table indexing compromised 5-tuples.
+
+---
+
+### 2. 22-Dimensional Real-Time Stream Oscilloscope
+*Direct insight into the 22-dimensional state vector $S_t \in \mathbb{R}^{22}$ discretized into continuous 2.0-second time windows:*
+
+<p align="center">
+  <img src="docs/screenshots/telemetry_22dim_oscilloscope.png" alt="22-Dimensional Dual-Level Telemetry Oscilloscope" width="95%" style="border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);" />
+</p>
+
+- **12 Flow-Level Dynamics:** Real-time monitors for Flow Duration, Total Fwd/Bwd Packets, Transmitted Bytes, Mean Packet Lengths, Inter-Arrival Times (IAT), and Port Fan-out.
+- **10 Packet Micro-Heuristics:** Deep packet inspection telemetry including TTL variance (spoofing detection), TCP window collapse monitors, and live animated TCP Flag distribution bars (**SYN**, **ACK**, **FIN**, **RST**).
+
+---
+
+### 3. Cyber Warfare Network Attack Topology Canvas
+*Interactive SVG graph illustrating live lateral worm propagation across subnet `147.32.80.0/24`:*
+
+<p align="center">
+  <img src="docs/screenshots/attack_topology_canvas.png" alt="Cyber Warfare Attack Topology Canvas with Interactive Node Inspector" width="95%" style="border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);" />
+</p>
+
+- **Real-Time Visual Threat Vectors:** Animated glowing packet streams traveling between attacking host `147.32.84.165` and target servers.
+- **Interactive Node Inspector:** Clicking any network node opens a dedicated inspection drawer showing open listening ports (`445/SMB`, `80/HTTP`, `53/DNS`, `88/Kerberos`), CVE vulnerability profiles (`MS08-067 NetAPI`), and calculated blast radius.
+- **Automated IPS Quarantine:** One-click automated isolation rule staging.
+
+---
+
+### 4. World Model Neural Dynamics & Rollout Lab ($K=5$ Simulator)
+*Deep architectural inspection of the 74,510-parameter recurrent World Model transition engine:*
+
+<p align="center">
+  <img src="docs/screenshots/world_model_dynamics_lab.png" alt="World Model Neural Dynamics and Autoregressive Rollout Lab" width="95%" style="border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);" />
+</p>
+
+- **Interactive $K=5$ Rollout Stepper:** Step through forward simulation points `t+1`, `t+2`, `t+3`, `t+4`, `t+5` to observe projected threat escalation (+2.0s to +10.0s into the future).
+- **Proactive Early-Warning Lead Time:** Visually highlights the **1.50-second lead-time advantage** before adversary payload detonation.
+- **Head-to-Head Benchmark Table:** Side-by-side empirical comparison against the static baseline logistic regression model.
+- **Sqrt-Smoothed Loss Weights:** Visualization of class weights ($0.207\text{x} \dots 1.881\text{x}$) preventing minority class gradient explosion.
+
+---
+
+### 5. Hacker-Style CRT Scanline Terminal Console
+*Full-featured retro-futuristic cyber defense console with phosphor CRT scanline effects:*
+
+<p align="center">
+  <img src="docs/screenshots/hacker_terminal_console.png" alt="Hacker CRT Scanline Command Terminal Console" width="95%" style="border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);" />
+</p>
+
+- **Interactive TUI Command Runner:** Type live commands (`help`, `forecast --steps 5`, `audit --summary`, `xai --explain`, `quarantine <ip>`, `status`).
+- **Live Stream Audit Output:** Displays ASCII box-drawing panels and real-time operational diagnostics.
+
+---
+
+### 6. Operational Defense Calibration & SQLite Audit Store
+*Fine-tune operational trade-offs and explore persistent forensic database records:*
+
+<p align="center">
+  <img src="docs/screenshots/calibration_sqlite_settings.png" alt="Operational Defense Calibration and SQLite Audit Settings" width="95%" style="border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);" />
+</p>
+
+- **Threat Decision Gate Slider ($\tau$):** Interactive slider between `0.50` and `0.90` with real-time recalculation of estimated Attack Recall vs. False Positive Rate (FPR).
+- **Temporal Persistence Filtering ($N$):** Select $N=1, 2, 3$ consecutive window verification.
+- **SQLite Audit Store Explorer:** Track database persistence path (`data/predictions.db`), synchronized sequence counts, and export forensic CSV reports.
+
+---
+
+### 7. Clean Baseline / Nominal Monitoring Overview
+*Baseline operational state with zero false alarms during normal benign traffic:*
+
+<p align="center">
+  <img src="docs/screenshots/soc_dashboard_overview.png" alt="SOC Operations Dashboard - Clean Nominal Baseline" width="95%" style="border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);" />
+</p>
 
 ---
 
