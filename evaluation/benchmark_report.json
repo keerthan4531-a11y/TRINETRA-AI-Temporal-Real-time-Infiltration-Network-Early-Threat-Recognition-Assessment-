@@ -1,0 +1,162 @@
+{
+  "test_dataset": {
+    "total_test_sequences": 2234,
+    "benign_sequences": 1756,
+    "attack_sequences": 478,
+    "sequence_lookback_w": 10,
+    "window_duration_seconds": 2.0,
+    "feature_dim": 22
+  },
+  "operating_regimes_comparison": {
+    "description": "Compares World Model at calibrated operational threshold (0.75) against Baseline at native threshold (0.50)",
+    "world_model_calibrated_0_75": {
+      "threshold": 0.75,
+      "f1": 0.7153,
+      "precision": 0.6343,
+      "recall": 0.8201,
+      "fpr": 0.1287,
+      "tp": 392,
+      "fp": 226,
+      "tn": 1530,
+      "fn": 86
+    },
+    "baseline_lr_native_0_50": {
+      "threshold": 0.5,
+      "f1": 0.5479,
+      "precision": 0.3931,
+      "recall": 0.9038,
+      "fpr": 0.3798,
+      "tp": 432,
+      "fp": 667,
+      "tn": 1089,
+      "fn": 46
+    },
+    "f1_improvement_pct": 30.55,
+    "precision_improvement_pct": 61.36,
+    "fpr_reduction_pct": 66.11
+  },
+  "same_threshold_0_50_comparison": {
+    "description": "Normalized head-to-head comparison at identical decision threshold (0.50)",
+    "world_model_0_50": {
+      "threshold": 0.5,
+      "f1": 0.6789,
+      "precision": 0.5491,
+      "recall": 0.8891,
+      "fpr": 0.1987,
+      "tp": 425,
+      "fp": 349,
+      "tn": 1407,
+      "fn": 53
+    },
+    "baseline_lr_0_50": {
+      "threshold": 0.5,
+      "f1": 0.5479,
+      "precision": 0.3931,
+      "recall": 0.9038,
+      "fpr": 0.3798,
+      "tp": 432,
+      "fp": 667,
+      "tn": 1089,
+      "fn": 46
+    },
+    "f1_improvement_pct": 23.91,
+    "fpr_reduction_pct": 47.68
+  },
+  "roc_auc": {
+    "world_model": 0.9116,
+    "baseline_lr": 0.7884
+  },
+  "mitre_per_stage_metrics": {
+    "Benign (Stage 0)": {
+      "stage_index": 0,
+      "support": 1756,
+      "world_model": {
+        "f1": 0.8782,
+        "precision": 0.9608,
+        "recall": 0.8087
+      },
+      "baseline_lr": {
+        "f1": 0.4627,
+        "precision": 0.9726,
+        "recall": 0.3035
+      }
+    },
+    "Reconnaissance (Stage 1)": {
+      "stage_index": 1,
+      "support": 263,
+      "world_model": {
+        "f1": 0.5244,
+        "precision": 0.3738,
+        "recall": 0.8783
+      },
+      "baseline_lr": {
+        "f1": 0.3006,
+        "precision": 0.2026,
+        "recall": 0.5817
+      }
+    },
+    "Initial Access (Stage 2)": {
+      "stage_index": 2,
+      "support": 26,
+      "world_model": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "baseline_lr": {
+        "f1": 0.1373,
+        "precision": 0.0787,
+        "recall": 0.5385
+      }
+    },
+    "Lateral Movement (Stage 3)": {
+      "stage_index": 3,
+      "support": 168,
+      "world_model": {
+        "f1": 0.5891,
+        "precision": 0.8444,
+        "recall": 0.4524
+      },
+      "baseline_lr": {
+        "f1": 0.359,
+        "precision": 0.3889,
+        "recall": 0.3333
+      }
+    },
+    "Command & Control (Stage 4)": {
+      "stage_index": 4,
+      "support": 21,
+      "world_model": {
+        "f1": 0.1739,
+        "precision": 0.125,
+        "recall": 0.2857
+      },
+      "baseline_lr": {
+        "f1": 0.0381,
+        "precision": 0.0197,
+        "recall": 0.5714
+      }
+    }
+  },
+  "early_warning_forecasting": {
+    "metric_name": "Average Threat Forecast Lead-Time",
+    "lead_time_seconds": 1.5,
+    "lead_time_windows": 0.75,
+    "operational_significance": "Allows automated firewall / IPS rule staging 1.5s\u20133.0s before full packet payload breach."
+  },
+  "training_class_weights": {
+    "formula": "Sqrt-smoothed inverse frequency: sqrt(total / count) normalized to mean 1.0",
+    "stage_0_benign": 0.207,
+    "stage_1_recon": 0.534,
+    "stage_2_initial_access": 1.709,
+    "stage_3_lateral_movement": 0.669,
+    "stage_4_command_and_control": 1.881
+  },
+  "runtime_efficiency": {
+    "device": "CPU (ASUS TUF Gaming F17)",
+    "average_step_inference_ms": 3.82,
+    "redis_stream_pipeline_latency_ms": 10.2,
+    "memory_footprint_mb": 783.5,
+    "window_cadence_headroom_pct": 99.49
+  }
+}

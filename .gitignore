@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data directories (raw PCAPs, large CSVs, processed caches)
+data/raw/
+data/processed/
+*.pcap
+*.pcapng
+*.csv.gz
+
+# Trained models & scalers (pre-trained weights are only ~270KB, so track them for instant out-of-box demo)
+# model/saved/*.pt
+# model/saved/*.pkl
+model/saved/*.onnx
+
+# Database
+*.db
+*.sqlite
+data/predictions.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# Logs and environment
+.env
+*.log
+.pytest_cache/
+.coverage
+htmlcov/

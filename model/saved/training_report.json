@@ -1,0 +1,104 @@
+{
+  "world_model": {
+    "dynamics_mse": 966.1825561523438,
+    "binary_infil": {
+      "precision": 0.5490956072351422,
+      "recall": 0.8891213389121339,
+      "f1": 0.6789137380191693
+    },
+    "stage_macro_f1": 0.4388801867935852,
+    "stage_weighted_f1": 0.8088637413048679,
+    "per_stage": {
+      "0": {
+        "name": "Benign",
+        "precision": 0.9508408796895214,
+        "recall": 0.837129840546697,
+        "f1": 0.8903694730466384,
+        "support": 1756
+      },
+      "1": {
+        "name": "Reconnaissance",
+        "precision": 0.3971119133574007,
+        "recall": 0.8365019011406845,
+        "f1": 0.5385556915544676,
+        "support": 263
+      },
+      "2": {
+        "name": "Initial Access",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 26
+      },
+      "3": {
+        "name": "Lateral Movement",
+        "precision": 0.8426966292134831,
+        "recall": 0.44642857142857145,
+        "f1": 0.5836575875486382,
+        "support": 168
+      },
+      "4": {
+        "name": "Command and Control",
+        "precision": 0.13333333333333333,
+        "recall": 0.2857142857142857,
+        "f1": 0.18181818181818182,
+        "support": 21
+      }
+    }
+  },
+  "baseline": {
+    "binary_infil": {
+      "f1": 0.5423514538558787,
+      "precision": 0.38858695652173914,
+      "recall": 0.897489539748954
+    },
+    "stage_macro_f1": 0.30978081435637794,
+    "stage_weighted_f1": 0.4291788367110502,
+    "per_stage": {
+      "0": {
+        "name": "Benign",
+        "precision": 0.975,
+        "recall": 0.2887243735763098,
+        "f1": 0.44551845342706503,
+        "support": 1756
+      },
+      "1": {
+        "name": "Reconnaissance",
+        "precision": 0.21428571428571427,
+        "recall": 0.6273764258555133,
+        "f1": 0.3194578896418199,
+        "support": 263
+      },
+      "2": {
+        "name": "Initial Access",
+        "precision": 0.12941176470588237,
+        "recall": 0.8461538461538461,
+        "f1": 0.22448979591836735,
+        "support": 26
+      },
+      "3": {
+        "name": "Lateral Movement",
+        "precision": 0.5253164556962026,
+        "recall": 0.49404761904761907,
+        "f1": 0.50920245398773,
+        "support": 168
+      },
+      "4": {
+        "name": "Command and Control",
+        "precision": 0.025974025974025976,
+        "recall": 0.7619047619047619,
+        "f1": 0.05023547880690738,
+        "support": 21
+      }
+    }
+  },
+  "known_limitations": {
+    "stage_2_initial_access": {
+      "world_model_f1": 0.0,
+      "baseline_lr_f1": 0.2245,
+      "baseline_lr_recall": 0.8462,
+      "explanation": "LSTM 10-second history is dominated by preceding ~9s of Reconnaissance traffic. Stage 2 probability rises from 0.045 to ~0.23 on actual exploit samples, but Reconnaissance wins argmax at ~0.45. Known sequence smoothing phenomenon.",
+      "mitigation": "Secondary signal alert when stage 2 raw probability >= 0.15."
+    }
+  }
+}

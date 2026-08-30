@@ -1,0 +1,13 @@
+{
+  "filename": "verified_attack_sample.csv",
+  "total_windows": 50,
+  "time_span_seconds": 100.0,
+  "ground_truth_benign_windows": 0,
+  "ground_truth_attack_windows": 50,
+  "benign_percentage": 0.0,
+  "attack_percentage": 100.0,
+  "stages": {
+    "3_Lateral_Movement": 50
+  },
+  "description": "100% verified genuine Botnet attack telemetry from CTU-13 Scenario 10 (Windows 3960 to 4010)."
+}

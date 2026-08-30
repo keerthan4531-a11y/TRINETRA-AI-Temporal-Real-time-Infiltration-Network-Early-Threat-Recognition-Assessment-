@@ -1,0 +1,13 @@
+{
+  "filename": "verified_benign_sample.csv",
+  "total_windows": 50,
+  "time_span_seconds": 100.0,
+  "ground_truth_benign_windows": 50,
+  "ground_truth_attack_windows": 0,
+  "benign_percentage": 100.0,
+  "attack_percentage": 0.0,
+  "stages": {
+    "0_Benign": 50
+  },
+  "description": "100% verified genuine enterprise background telemetry from CTU-13 Scenario 10 baseline (Windows 0 to 50)."
+}
