@@ -12,7 +12,7 @@
    [ THE PROACTIVE THIRD EYE OF CYBER DEFENSE • FORECASTING INTRUSIONS BEFORE BREACH ]
 ```
 
-[![Smart India Hackathon](https://img.shields.io/badge/SIH-2024%20Grand%20Finalist-FF9933?style=for-the-badge&logo=shield&logoColor=white)](https://sih.gov.in)
+[![Smart India Hackathon](https://img.shields.io/badge/SIH-2026%20Grand%20Finalist-FF9933?style=for-the-badge&logo=shield&logoColor=white)](https://sih.gov.in)
 [![NTRO Challenge](https://img.shields.io/badge/NTRO%20Challenge-PS%20ID%2026153-0052CC?style=for-the-badge&logo=target&logoColor=white)](https://ntro.gov.in)
 [![PyTorch 2.1](https://img.shields.io/badge/PyTorch-2.1%20LTS-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-ASGI%20WebSockets-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)

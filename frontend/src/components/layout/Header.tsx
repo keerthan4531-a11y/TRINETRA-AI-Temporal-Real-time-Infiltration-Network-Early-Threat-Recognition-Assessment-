@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Cpu, Bell, Activity } from 'lucide-react';
+import { Clock, Cpu, Activity, ShieldCheck } from 'lucide-react';
 
 interface HeaderProps {
   isConnected: boolean;
   device: string;
   isStreaming?: boolean;
+  activeTabTitle?: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ isConnected, device, isStreaming = true }) => {
+export const Header: React.FC<HeaderProps> = ({
+  isConnected,
+  device,
+  isStreaming = true,
+  activeTabTitle = 'SOC Command Center'
+}) => {
   const [timeStr, setTimeStr] = useState('');
   const [utcMode, setUtcMode] = useState(false);
 
@@ -23,126 +29,126 @@ export const Header: React.FC<HeaderProps> = ({ isConnected, device, isStreaming
 
   return (
     <header
+      className="ios-glass"
       style={{
-        height: '64px',
-        backgroundColor: 'var(--bg-card)',
-        borderBottom: '1px solid var(--border-card)',
+        height: '68px',
+        margin: '12px 16px 0 16px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '0 24px',
-        userSelect: 'none',
+        zIndex: 10,
+        borderRadius: '16px',
       }}
     >
-      {/* Left: Operational Title & Status Pill */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Activity size={18} color="var(--cyan-accent)" />
-          <h1 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, letterSpacing: '0.02em', color: '#f8fafc' }}>
-            SOC Cyber Threat Defense Console
-          </h1>
+      {/* Left: Operational Brand & Active Section */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div
+            style={{
+              width: '32px',
+              height: '32px',
+              borderRadius: '8px',
+              background: 'linear-gradient(135deg, rgba(0, 217, 255, 0.25) 0%, rgba(59, 130, 246, 0.15) 100%)',
+              border: '1px solid rgba(0, 217, 255, 0.35)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 0 12px rgba(0, 217, 255, 0.25)',
+            }}
+          >
+            <Activity size={17} color="var(--cyan-accent)" />
+          </div>
+          <div>
+            <h1 style={{ fontSize: '0.95rem', fontWeight: 800, margin: 0, letterSpacing: '0.04em', color: '#f8fafc' }}>
+              TRINETRA-AI <span style={{ color: 'var(--cyan-accent)', fontWeight: 400 }}>//</span> {activeTabTitle}
+            </h1>
+            <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)', letterSpacing: '0.05em' }}>
+              NTRO CYBER WARFARE DEFENSE • PROACTIVE WORLD MODEL
+            </div>
+          </div>
         </div>
 
+        {/* Live Stream Status Pill */}
         <div
+          className="ios-glass-pill"
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '3px 10px',
-            borderRadius: '12px',
-            backgroundColor: isStreaming ? 'rgba(0, 217, 255, 0.12)' : 'rgba(100, 116, 139, 0.15)',
-            border: `1px solid ${isStreaming ? 'rgba(0, 217, 255, 0.3)' : 'rgba(100, 116, 139, 0.3)'}`,
+            borderColor: isStreaming ? 'rgba(0, 217, 255, 0.35)' : 'rgba(100, 116, 139, 0.25)',
+            color: isStreaming ? 'var(--cyan-accent)' : 'var(--text-muted)',
             fontSize: '0.68rem',
             fontFamily: 'var(--font-mono)',
             fontWeight: 700,
-            color: isStreaming ? 'var(--cyan-accent)' : 'var(--text-muted)',
           }}
         >
-          <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: isStreaming ? '#00d9ff' : '#64748b' }} />
-          {isStreaming ? 'LIVE TELEMETRY STREAM' : 'SYSTEM IDLE'}
+          <span className={isConnected ? 'pulse-dot-green' : 'pulse-dot-red'} />
+          {isStreaming ? 'LIVE STREAM SYNCHRONIZED' : 'STREAM STANDBY'}
+        </div>
+
+        {/* SIH-2026 Badge */}
+        <div
+          className="ios-glass-pill"
+          style={{
+            borderColor: 'rgba(255, 153, 51, 0.35)',
+            background: 'rgba(255, 153, 51, 0.08)',
+            color: '#ff9933',
+            fontSize: '0.65rem',
+            fontFamily: 'var(--font-mono)',
+            fontWeight: 700,
+          }}
+        >
+          <ShieldCheck size={11} color="#ff9933" />
+          SIH 2026 • NTRO PS-26153
         </div>
       </div>
 
-      {/* Right: Technical Meta Badges (Clock, WebSocket, Hardware) */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        {/* Shipped Threshold Pill */}
+      {/* Right: Telemetry Specs & Live Clock */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        {/* Hardware Status Tag */}
         <div
+          className="ios-glass-pill"
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            fontSize: '0.72rem',
+            fontSize: '0.7rem',
             fontFamily: 'var(--font-mono)',
             color: 'var(--text-secondary)',
-            backgroundColor: 'rgba(15, 23, 42, 0.8)',
-            padding: '4px 10px',
-            borderRadius: '6px',
-            border: '1px solid var(--border-subtle)',
           }}
         >
-          <Bell size={13} color="var(--severity-medium)" />
-          <span>ALERT THRESHOLD: <strong style={{ color: 'var(--text-primary)' }}>&tau;=0.75 (N=2)</strong></span>
+          <Cpu size={12} color="var(--text-muted)" />
+          <span>{device}</span>
+          <span style={{ color: 'var(--text-muted)' }}>•</span>
+          <span>16GB RAM</span>
+          <span style={{ color: 'var(--text-muted)' }}>•</span>
+          <span style={{ color: 'var(--severity-normal)' }}>10.20ms</span>
         </div>
 
-        {/* Device Info */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            fontSize: '0.72rem',
-            fontFamily: 'var(--font-mono)',
-            color: 'var(--text-secondary)',
-            backgroundColor: 'rgba(15, 23, 42, 0.8)',
-            padding: '4px 10px',
-            borderRadius: '6px',
-            border: '1px solid var(--border-subtle)',
-          }}
-        >
-          <Cpu size={14} color="var(--cyan-accent)" />
-          <span>{device} • 16GB RAM</span>
-        </div>
-
-        {/* Live Clock */}
-        <div
+        {/* Live Clock with Local/UTC Toggle */}
+        <button
           onClick={() => setUtcMode(!utcMode)}
+          className="ios-glass-btn"
+          title="Click to toggle Local / UTC format"
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
+            padding: '5px 12px',
             fontSize: '0.72rem',
             fontFamily: 'var(--font-mono)',
-            color: 'var(--text-secondary)',
-            backgroundColor: 'rgba(15, 23, 42, 0.8)',
-            padding: '4px 10px',
-            borderRadius: '6px',
-            border: '1px solid var(--border-subtle)',
-            cursor: 'pointer',
+            color: 'var(--text-highlight)',
           }}
-          title="Click to toggle Local / UTC time"
         >
-          <Clock size={13} color="var(--text-muted)" />
-          <span>{timeStr}</span>
-        </div>
+          <Clock size={13} color="var(--cyan-accent)" />
+          <span>{timeStr || '00:00:00'}</span>
+        </button>
 
-        {/* WebSocket Connection Status */}
+        {/* Connection Dot */}
         <div
+          className="ios-glass-pill"
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
             padding: '4px 10px',
-            borderRadius: '6px',
-            backgroundColor: isConnected ? 'rgba(16, 185, 129, 0.1)' : 'rgba(255, 56, 96, 0.1)',
-            border: `1px solid ${isConnected ? 'rgba(16, 185, 129, 0.3)' : 'rgba(255, 56, 96, 0.3)'}`,
-            fontSize: '0.72rem',
+            fontSize: '0.68rem',
             fontFamily: 'var(--font-mono)',
-            fontWeight: 600,
+            borderColor: isConnected ? 'rgba(16, 185, 129, 0.35)' : 'rgba(255, 56, 96, 0.35)',
             color: isConnected ? 'var(--severity-normal)' : 'var(--severity-critical)',
           }}
         >
-          <div className={isConnected ? 'pulse-dot-green' : 'pulse-dot-red'} />
-          <span>{isConnected ? 'STREAM CONNECTED' : 'DISCONNECTED'}</span>
+          <span className={isConnected ? 'pulse-dot-green' : 'pulse-dot-red'} />
+          <span>{isConnected ? 'WEBSOCKET ACTIVE' : 'DISCONNECTED'}</span>
         </div>
       </div>
     </header>

@@ -1,17 +1,19 @@
 :root {
-  --bg-base: #070a0f;
-  --bg-sidebar: #0b0f17;
-  --bg-card: #0f172a;
-  --bg-card-hover: #141e33;
-  --bg-subtle: rgba(15, 23, 42, 0.65);
+  --bg-base: #06090e;
+  --bg-sidebar: rgba(10, 14, 22, 0.75);
+  --bg-card: rgba(15, 23, 42, 0.65);
+  --bg-card-hover: rgba(20, 30, 50, 0.85);
+  --bg-glass: rgba(13, 19, 33, 0.60);
 
-  --border-subtle: rgba(56, 189, 248, 0.12);
-  --border-glow: rgba(56, 189, 248, 0.35);
-  --border-card: #1e293b;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-glow: rgba(0, 217, 255, 0.40);
+  --border-card: rgba(30, 41, 59, 0.80);
 
   --cyan-accent: #00d9ff;
   --cyan-muted: #0284c7;
   --blue-accent: #3b82f6;
+  --purple-accent: #a855f7;
 
   --severity-normal: #10b981;
   --severity-low: #06b6d4;
@@ -25,7 +27,7 @@
   --text-highlight: #38bdf8;
 
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Cascadia Code', monospace;
 }
 
 * {
@@ -40,51 +42,233 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: 
-    radial-gradient(circle at 10% 10%, rgba(0, 217, 255, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.03) 0%, transparent 40%);
+  position: relative;
 }
 
+/* =========================================================================
+   1. AMBIENT FLUID LIQUID MESH BACKGROUND
+   ========================================================================= */
+.liquid-ambient-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes fluid-drift-1 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(120px, 80px) scale(1.15); }
+  66% { transform: translate(-80px, 140px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes fluid-drift-2 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(-140px, -60px) scale(1.1); }
+  66% { transform: translate(90px, -110px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes fluid-drift-3 {
+  0% { transform: translate(0px, 0px) scale(0.9); }
+  50% { transform: translate(-100px, 100px) scale(1.2); }
+  100% { transform: translate(0px, 0px) scale(0.9); }
+}
+
+.liquid-blob-1 {
+  position: absolute;
+  top: -10%;
+  left: 15%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.14) 0%, rgba(2, 132, 199, 0.05) 50%, transparent 70%);
+  filter: blur(80px);
+  animation: fluid-drift-1 22s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+.liquid-blob-2 {
+  position: absolute;
+  bottom: -15%;
+  right: 10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 56, 96, 0.12) 0%, rgba(168, 85, 247, 0.05) 50%, transparent 70%);
+  filter: blur(90px);
+  animation: fluid-drift-2 26s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+.liquid-blob-3 {
+  position: absolute;
+  top: 40%;
+  right: 35%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(59, 130, 246, 0.04) 50%, transparent 70%);
+  filter: blur(75px);
+  animation: fluid-drift-3 18s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* Subtle Cyber Grid Texture Overlay */
+.cyber-grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================================================================
+   2. HIGH-END iOS LIQUID GLASS ARCHITECTURE
+   ========================================================================= */
+
+/* Core Frosted Glass Panel */
+.ios-glass {
+  background: rgba(13, 19, 32, 0.65);
+  backdrop-filter: blur(28px) saturate(210%);
+  -webkit-backdrop-filter: blur(28px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 
+    0 16px 40px -10px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Specular Sheen (Apple's fluid glass light refraction) */
+.ios-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, transparent 100%);
+  pointer-events: none;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+/* Interactive Spring Physics Glass Card */
+.ios-glass-interactive {
+  background: rgba(13, 19, 32, 0.65);
+  backdrop-filter: blur(28px) saturate(210%);
+  -webkit-backdrop-filter: blur(28px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 
+    0 16px 40px -10px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              background 0.35s ease;
+}
+
+.ios-glass-interactive:hover {
+  transform: translateY(-3px) scale(1.004);
+  background: rgba(18, 26, 44, 0.78);
+  border-color: rgba(0, 217, 255, 0.35);
+  box-shadow: 
+    0 24px 50px -8px rgba(0, 217, 255, 0.18),
+    0 16px 30px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.32);
+}
+
+/* Ultra-Thin Frosted Glass Pill */
+.ios-glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+}
+
+/* Tactile Liquid Button */
+.ios-glass-btn {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ios-glass-btn:hover {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border-color: rgba(0, 217, 255, 0.45);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 217, 255, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+
+.ios-glass-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Typography Monospace Guard */
 .font-mono, code, pre, td.num-cell, span.metric-val {
   font-family: var(--font-mono);
   font-feature-settings: 'tnum' on, 'zero' on;
 }
 
-/* Glassmorphism SOC Cards */
-.soc-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.soc-card:hover {
-  border-color: var(--border-glow);
-  box-shadow: 0 4px 24px -2px rgba(0, 217, 255, 0.12);
-}
-
-/* Custom Tactical Scrollbars */
+/* Custom Tactical Glass Scrollbars */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #090d14;
+  background: rgba(6, 9, 14, 0.8);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--cyan-accent);
 }
 
-/* Pulsing Status Dot */
+/* Pulsing Status Indicators */
 @keyframes pulse-live {
   0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
   70% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
   100% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@keyframes pulse-critical {
+  0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(255, 56, 96, 0.7); }
+  70% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 0 8px rgba(255, 56, 96, 0); }
+  100% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(255, 56, 96, 0); }
 }
 
 .pulse-dot-green {
@@ -96,19 +280,23 @@ body {
 }
 
 .pulse-dot-red {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background-color: var(--severity-critical);
-  animation: pulse-live 1.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  animation: pulse-critical 1.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-/* Shimmer on new rows */
-@keyframes row-flash {
-  0% { background-color: rgba(0, 217, 255, 0.15); }
-  100% { background-color: transparent; }
-}
-
-.row-new {
-  animation: row-flash 1.5s ease-out;
+/* CRT Phosphor Scanline Overlay for Terminal */
+.crt-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
 }
