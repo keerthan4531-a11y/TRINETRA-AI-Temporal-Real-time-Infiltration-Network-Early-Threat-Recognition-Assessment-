@@ -11,8 +11,12 @@ export function useLivePredictions(maxHistory: number = 30) {
   useEffect(() => {
     const ws = new TelemetryWebSocket();
     wsRef.current = ws;
+    
+    const unsubStatus = ws.onStatusChange((connected) => {
+      setIsConnected(connected);
+    });
+
     ws.connect();
-    setIsConnected(true);
 
     const unsubscribe = ws.subscribe((pred: PredictionResponse) => {
       setCurrentPrediction(pred);
@@ -26,6 +30,7 @@ export function useLivePredictions(maxHistory: number = 30) {
     });
 
     return () => {
+      unsubStatus();
       unsubscribe();
       ws.disconnect();
       setIsConnected(false);
