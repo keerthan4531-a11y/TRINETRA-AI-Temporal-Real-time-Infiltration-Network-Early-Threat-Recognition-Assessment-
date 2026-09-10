@@ -1,5 +1,5 @@
 # Architecture Document: AI Network Attack Forecasting World Model
-**Challenge Track:** NTRO Blockchain & Cybersecurity — AI Based Network Attack Forecasting  
+**Focus Area:** Autonomous AI Network Attack Forecasting & Cyber Threat Recognition  
 **Classification:** Open-Source Prototype (100% Offline, Edge-Deployable, Zero Cloud Dependency)  
 **Target Hardware:** Consumer / Tactical Laptop (ASUS TUF Gaming F17, 16GB RAM, 4GB VRAM)
 

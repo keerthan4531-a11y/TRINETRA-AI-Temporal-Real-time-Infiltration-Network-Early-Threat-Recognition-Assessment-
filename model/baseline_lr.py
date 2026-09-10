@@ -3,7 +3,7 @@ Baseline Static Model: Logistic Regression.
 Trains non-temporal classifiers on single-window features:
 1. Binary Infiltration Classifier (class_weight='balanced')
 2. Multi-class MITRE Stage Classifier (class_weight='balanced')
-Fulfills NTRO requirement to benchmark temporal World Model dynamics vs static baseline.
+Benchmarks temporal World Model dynamics vs static baseline.
 """
 
 import pickle

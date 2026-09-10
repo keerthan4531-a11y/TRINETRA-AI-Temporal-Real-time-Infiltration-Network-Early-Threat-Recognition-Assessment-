@@ -1,7 +1,7 @@
 # Technical Presentation Outline (5 Slides)
 **Project Title:** Proactive Cyber Defense via AI Network Attack Forecasting (World Models)  
-**Organization:** National Technical Research Organisation (NTRO)  
-**Theme:** Blockchain & Cybersecurity (Track 2)  
+**Domain:** Enterprise & Mission-Critical Cyber Defense Operations  
+**Theme:** Proactive Intrusion Forecasting & Real-Time World Models  
 **Hardware Profile:** Local Laptop Deployment (16GB RAM / 4GB VRAM / 100% Offline)
 
 ---

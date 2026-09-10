@@ -421,7 +421,7 @@ def run_live_replay(interval: float = 0.5, max_steps: int = 50, use_redis: bool 
 
 
 def main():
-    parser = argparse.ArgumentParser(description="NTRO AI Network Attack Forecasting - Hacker-Style TUI")
+    parser = argparse.ArgumentParser(description="AI Network Attack Forecasting - Hacker-Style TUI")
     parser.add_argument("--input", help="Path to real PCAP or CSV flow telemetry file")
     parser.add_argument("--live", action="store_true", help="Launch live streaming TUI replaying real CTU-13 telemetry")
     parser.add_argument("--demo", action="store_true", help="Run quick 15-window automated demonstration")

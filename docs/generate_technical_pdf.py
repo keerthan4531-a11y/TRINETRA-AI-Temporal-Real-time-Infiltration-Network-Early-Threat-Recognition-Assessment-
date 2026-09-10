@@ -50,7 +50,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Running Header (pages > 1)
         if self._pageNumber > 1:
-            self.drawString(54, 750, "NTRO Cybersecurity Challenge • AI Network Attack Forecasting World Model")
+            self.drawString(54, 750, "TRINETRA-AI • AI Network Attack Forecasting World Model")
             self.drawRightString(612 - 54, 750, "Technical Deep-Dive Architecture")
             self.setStrokeColor(colors.HexColor("#cbd5e1"))
             self.setLineWidth(0.5)
@@ -60,7 +60,7 @@ class NumberedCanvas(canvas.Canvas):
         self.setStrokeColor(colors.HexColor("#cbd5e1"))
         self.setLineWidth(0.5)
         self.line(54, 45, 612 - 54, 45)
-        self.drawString(54, 32, "CONFIDENTIAL • NTRO Cyber Defense Research Prototype • 100% Offline Edge Architecture")
+        self.drawString(54, 32, "CONFIDENTIAL • Cyber Defense Research Prototype • 100% Offline Edge Architecture")
         page_text = f"Page {self._pageNumber} of {page_count}"
         self.drawRightString(612 - 54, 32, page_text)
 
@@ -162,7 +162,7 @@ def build_pdf():
     story.append(Paragraph("AI-Driven Network Attack Forecasting via World Models", title_style))
     story.append(Paragraph(
         "<b>Technical Deep-Dive & Engineering Specification</b><br/>"
-        "<b>Challenge Theme:</b> NTRO Blockchain & Cybersecurity (Track 2) | "
+        "<b>Domain:</b> Autonomous Network Defense & Attack Trajectory Forecasting | "
         "<b>Execution Target:</b> Edge Tactical Node (16GB RAM / 4GB VRAM)",
         subtitle_style
     ))

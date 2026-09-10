@@ -10,7 +10,7 @@ export const TerminalConsoleView: React.FC<TerminalConsoleViewProps> = () => {
   const [inputVal, setInputVal] = useState('');
   const [logs, setLogs] = useState<string[]>([
     'TRINETRA-AI TACTICAL CYBER COMMAND CONSOLE [v2.0]',
-    'NTRO Track 2 • 100% Local & Offline Edge Architecture • Device: CPU',
+    '100% Local & Offline Edge Architecture • Device: CPU',
     '[*] Initializing PyTorch World Model Engine (LSTM W=10, K=5)... [OK]',
     '[*] Subscribing to Local Redis Stream: network:telemetry:windows... [OK]',
     '[*] Calibrated Threat Decision Gate: tau=0.75 (N=2 persistence)... [OK]',
@@ -29,7 +29,7 @@ export const TerminalConsoleView: React.FC<TerminalConsoleViewProps> = () => {
     const cmd = inputVal.trim();
     if (!cmd) return;
 
-    const newLogs = [...logs, `trinetra@ntro-soc:~$ ${cmd}`];
+    const newLogs = [...logs, `trinetra@soc-console:~$ ${cmd}`];
 
     if (cmd === 'help') {
       newLogs.push(
@@ -139,7 +139,7 @@ export const TerminalConsoleView: React.FC<TerminalConsoleViewProps> = () => {
               <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27c93f' }} />
             </div>
             <span style={{ fontSize: '0.78rem', color: 'var(--cyan-accent)', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
-              trinetra-ai@ntro-edge-sensor:~ (bash / tty1)
+              trinetra-ai@edge-sensor:~ (bash / tty1)
             </span>
           </div>
 
@@ -193,7 +193,7 @@ export const TerminalConsoleView: React.FC<TerminalConsoleViewProps> = () => {
         {/* Command Input Form */}
         <form onSubmit={handleCommand} style={{ marginTop: '16px', display: 'flex', gap: '10px', alignItems: 'center' }}>
           <span style={{ color: 'var(--cyan-accent)', fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.85rem' }}>
-            trinetra@ntro-soc:~$
+            trinetra@soc-console:~$
           </span>
           <input
             type="text"

@@ -134,24 +134,24 @@ def print_manual_instructions():
     print("""
 If automatic HTTPS download is blocked, download any of these REAL datasets in your browser
 and place the file(s) into:
-   d:\\sih2\\network-attack-forecasting\\data\\raw\\
+   data/raw/
 
 REAL OFFICIAL DIRECT LINKS (CTU-13 Stratosphere Research Lab):
 1. Full CTU-13 Scenario 10 Flow Dataset (Rbot Botnet - C2 IRC & Flood - 308 MB):
    https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-51/capture20110818.binetflow.2format
-   -> Save as: d:\\sih2\\network-attack-forecasting\\data\\raw\\scen10_rbot.binetflow
+   -> Save as: data/raw/scen10_rbot.binetflow
 
 2. Full CTU-13 Scenario 2 PCAP (Neris Botnet - Recon & Initial Access - 34.58 MB):
    https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-43/botnet-capture-20110811-neris.pcap
-   -> Save as: d:\\sih2\\network-attack-forecasting\\data\\raw\\scen2_neris_full.pcap
+   -> Save as: data/raw/scen2_neris_full.pcap
 
 3. Full CTU-13 Scenario 11 Flow Dataset (Rbot Botnet - 25.09 MB):
    https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-52/capture20110818-2.binetflow.2format
-   -> Save as: d:\\sih2\\network-attack-forecasting\\data\\raw\\scen11_rbot.binetflow
+   -> Save as: data/raw/scen11_rbot.binetflow
 
 4. CTU-13 Scenario 2 Short NetFlow (16K flows - 3.16 MB):
    https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-2/2013-08-20_capture-win2.netflow
-   -> Save as: d:\\sih2\\network-attack-forecasting\\data\\raw\\ctu_botnet_flow.netflow
+   -> Save as: data/raw/ctu_botnet_flow.netflow
 
 5. CIC-IDS-2018 (AWS Open Data / UNB Alternative):
    https://registry.opendata.aws/cse-cic-ids2018/

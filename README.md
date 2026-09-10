@@ -12,8 +12,6 @@
    [ THE PROACTIVE THIRD EYE OF CYBER DEFENSE • FORECASTING INTRUSIONS BEFORE BREACH ]
 ```
 
-[![Smart India Hackathon](https://img.shields.io/badge/SIH-2026%20Grand%20Finalist-FF9933?style=for-the-badge&logo=shield&logoColor=white)](https://sih.gov.in)
-[![NTRO Challenge](https://img.shields.io/badge/NTRO%20Challenge-PS%20ID%2026153-0052CC?style=for-the-badge&logo=target&logoColor=white)](https://ntro.gov.in)
 [![PyTorch 2.1](https://img.shields.io/badge/PyTorch-2.1%20LTS-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-ASGI%20WebSockets-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Redis Streams](https://img.shields.io/badge/Redis-8.10%20Streams-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io)
@@ -440,7 +438,7 @@ Running one-shot analysis in the terminal prints a rich box-drawing audit panel 
 
 ## 🔬 Scientific Integrity: Documented Limitations
 
-In accordance with rigorous military research standards (NTRO), TRINETRA-AI explicitly documents its known boundaries:
+In accordance with rigorous cybersecurity research standards, TRINETRA-AI explicitly documents its known boundaries:
 
 1. **Initial Access Temporal Smoothing:**
    In real network captures, Initial Access is an instantaneous 1-second exploit spike. Preceded by 9 seconds of aggressive port scanning, the LSTM's 10-second lookback hidden state is dominated by the scanning phase. While Initial Access probability spikes from 0.04 to 0.23, Reconnaissance still wins the argmax. The non-temporal baseline, analyzing only the isolated instant, captures this spike (Recall 84.6%).
@@ -615,15 +613,14 @@ py -m pytest tests/
 The repository contains publication-ready technical specifications:
 - **[6-Page Technical Deep-Dive PDF](docs/technical_deep_dive.pdf):** Full mathematical derivation, loss formulation, and hardware benchmarks.
 - **[2-Page Architecture Specification](docs/architecture.md):** Executive technical brief and schema definitions.
-- **[5-Slide Presentation Outline](docs/presentation_outline.md):** Competitive pitch deck structure for hackathons and technical defenses.
+- **[5-Slide Presentation Outline](docs/presentation_outline.md):** Competitive pitch deck structure for technical presentations and defenses.
 - **[Known Model Limitations](model/saved/known_limitations.md):** Honest analysis of sequence smoothing and alert volume trade-offs.
 
 ---
 
 ## 👥 Authors & Acknowledgments
-- **Project Lead & AI Architecture:** Smart India Hackathon Grand Finalist Team
-- **Sponsoring Agency:** National Technical Research Organisation (NTRO)
-- **Challenge Statement:** NTRO Challenge PS ID 26153 — *"AI based Network Attack Forecasting from Network Traffic Data"*
+- **Project Lead & AI Architecture:** TRINETRA-AI Cyber Defense Team
+- **Focus Domain:** Autonomous AI Network Attack Forecasting & MITRE ATT&CK Trajectory Recognition
 - **Dataset Credits:** CTU-13 Dataset, Czech Technical University (Stratosphere IPS Project)
 
 ---

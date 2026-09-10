@@ -62,8 +62,7 @@ def run_replay(file_path: Path, interval: float = 2.0, loop: bool = False, max_w
     producer = RedisTelemetryProducer()
     if not producer.is_connected:
         print("[!] Fatal: Cannot connect to Redis on localhost:6379.")
-        print("[!] Make sure redis-server.exe is running. Run:")
-        print("    d:\\sih2\\tools\\redis\\Redis-8.10.1-Windows-x64-msys2\\redis-server.exe")
+        print("[!] Make sure redis-server is running.")
         sys.exit(1)
 
     print(f"[*] Redis Stream Producer connected to localhost:6379")

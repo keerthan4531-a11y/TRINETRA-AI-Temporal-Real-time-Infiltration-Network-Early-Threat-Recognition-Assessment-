@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
               TRINETRA-AI <span style={{ color: 'var(--cyan-accent)', fontWeight: 400 }}>//</span> {activeTabTitle}
             </h1>
             <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)', letterSpacing: '0.05em' }}>
-              NTRO CYBER WARFARE DEFENSE • PROACTIVE WORLD MODEL
+              CYBER WARFARE DEFENSE • PROACTIVE WORLD MODEL
             </div>
           </div>
         </div>
@@ -84,20 +84,20 @@ export const Header: React.FC<HeaderProps> = ({
           {isStreaming ? 'LIVE STREAM SYNCHRONIZED' : 'STREAM STANDBY'}
         </div>
 
-        {/* SIH-2026 Badge */}
+        {/* System Status Badge */}
         <div
           className="ios-glass-pill"
           style={{
-            borderColor: 'rgba(255, 153, 51, 0.35)',
-            background: 'rgba(255, 153, 51, 0.08)',
-            color: '#ff9933',
+            borderColor: 'rgba(0, 217, 255, 0.35)',
+            background: 'rgba(0, 217, 255, 0.08)',
+            color: 'var(--cyan-accent)',
             fontSize: '0.65rem',
             fontFamily: 'var(--font-mono)',
             fontWeight: 700,
           }}
         >
-          <ShieldCheck size={11} color="#ff9933" />
-          SIH 2026 • NTRO PS-26153
+          <ShieldCheck size={11} color="var(--cyan-accent)" />
+          PROACTIVE DEFENSE ACTIVE
         </div>
       </div>
 

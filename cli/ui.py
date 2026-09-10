@@ -23,7 +23,7 @@ def print_boot_splash(device: str = "CPU", console_instance: Optional[Console] =
         "[bold cyan] /    / / / / , _/ _// __ |  / /| |  / /    [/bold cyan]\n"
         "[bold green]/_/|_/ /_/ /_/|_/___/_/ |_| /_/ |_|_/___/   [/bold green]\n"
         "[bold white]AI NETWORK ATTACK FORECASTING ENGINE • SOC DEFENSE TERMINAL[/bold white]\n"
-        "[dim cyan]NTRO Track 2 • 100% Local & Offline Edge Architecture • Device: " + device.upper() + "[/dim cyan]"
+        "[dim cyan]100% Local & Offline Edge Architecture • Device: " + device.upper() + "[/dim cyan]"
     )
     p = Panel(
         Text.from_markup(banner_text, justify="center"),
